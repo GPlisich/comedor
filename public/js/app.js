@@ -6748,11 +6748,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {}
+  data: function data() {
+    return {};
+  },
+  created: function created() {},
+  mounted: function mounted() {},
+  methods: {}
 });
 
 /***/ }),
@@ -6860,17 +6863,7 @@ __webpack_require__.r(__webpack_exports__);
       isSubmitting: false
     };
   },
-  created: function created() {
-    var self = this;
-    document.onkeyup = function (e) {
-      var key = window.event.keyCode;
-      if (key == 13 && self.form.email != '' && self.form.password != '') {
-        self.loginAction('form');
-      } else if (key == 13) {
-        self.focusInput('password');
-      }
-    };
-  },
+  created: function created() {},
   mounted: function mounted() {
     this.focusInput('email');
   },
@@ -6912,6 +6905,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      form: {
+        dia: '',
+        menu1: '',
+        menu2: '',
+        menu3: '',
+        password: '',
+        postre1: '',
+        postre2: '',
+        postre3: ''
+      },
+      rulesForm: {
+        email: [{
+          required: true,
+          message: 'El email no puede estar vacio',
+          trigger: 'blur'
+        }],
+        password: [{
+          required: true,
+          message: 'La password no puede ser vacia',
+          trigger: 'blur'
+        }]
+      },
+      pickerOptions: {
+        disabledDate: function disabledDate(time) {
+          // Función para deshabilitar los fines de semana
+          var day = time.getDay();
+          return day === 0 || day === 6; // 0 para domingo, 6 para sábado
+        }
+      }
+    };
+  },
+  created: function created() {},
+  mounted: function mounted() {},
+  methods: {}
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -6923,6 +7054,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! element-ui */ "./node_modules/element-ui/lib/element-ui.common.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var element_ui_lib_theme_chalk_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! element-ui/lib/theme-chalk/index.css */ "./node_modules/element-ui/lib/theme-chalk/index.css");
+/* harmony import */ var element_ui_lib_locale_lang_en__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! element-ui/lib/locale/lang/en */ "./node_modules/element-ui/lib/locale/lang/en.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -6930,10 +7062,13 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
+
 // import router from "@/router";
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
-Vue.use((element_ui__WEBPACK_IMPORTED_MODULE_0___default()));
+Vue.use((element_ui__WEBPACK_IMPORTED_MODULE_0___default()), {
+  locale: element_ui_lib_locale_lang_en__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
 
 /**
  * The following block of code may be used to automatically register your
@@ -6949,6 +7084,7 @@ Vue.use((element_ui__WEBPACK_IMPORTED_MODULE_0___default()));
 Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 Vue.component('login-component', (__webpack_require__(/*! ./components/LoginComponent.vue */ "./resources/js/components/LoginComponent.vue")["default"]));
 Vue.component('invitado-component', (__webpack_require__(/*! ./components/InvitadoComponent.vue */ "./resources/js/components/InvitadoComponent.vue")["default"]));
+Vue.component('showmenu-component', (__webpack_require__(/*! ./components/ShowMenuComponent.vue */ "./resources/js/components/ShowMenuComponent.vue")["default"]));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -62497,6 +62633,142 @@ exports["default"] = { use: use, t: t, i18n: i18n };
 
 /***/ }),
 
+/***/ "./node_modules/element-ui/lib/locale/lang/en.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/element-ui/lib/locale/lang/en.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports["default"] = {
+  el: {
+    colorpicker: {
+      confirm: 'OK',
+      clear: 'Clear'
+    },
+    datepicker: {
+      now: 'Now',
+      today: 'Today',
+      cancel: 'Cancel',
+      clear: 'Clear',
+      confirm: 'OK',
+      selectDate: 'Select date',
+      selectTime: 'Select time',
+      startDate: 'Start Date',
+      startTime: 'Start Time',
+      endDate: 'End Date',
+      endTime: 'End Time',
+      prevYear: 'Previous Year',
+      nextYear: 'Next Year',
+      prevMonth: 'Previous Month',
+      nextMonth: 'Next Month',
+      year: '',
+      month1: 'January',
+      month2: 'February',
+      month3: 'March',
+      month4: 'April',
+      month5: 'May',
+      month6: 'June',
+      month7: 'July',
+      month8: 'August',
+      month9: 'September',
+      month10: 'October',
+      month11: 'November',
+      month12: 'December',
+      week: 'week',
+      weeks: {
+        sun: 'Sun',
+        mon: 'Mon',
+        tue: 'Tue',
+        wed: 'Wed',
+        thu: 'Thu',
+        fri: 'Fri',
+        sat: 'Sat'
+      },
+      months: {
+        jan: 'Jan',
+        feb: 'Feb',
+        mar: 'Mar',
+        apr: 'Apr',
+        may: 'May',
+        jun: 'Jun',
+        jul: 'Jul',
+        aug: 'Aug',
+        sep: 'Sep',
+        oct: 'Oct',
+        nov: 'Nov',
+        dec: 'Dec'
+      }
+    },
+    select: {
+      loading: 'Loading',
+      noMatch: 'No matching data',
+      noData: 'No data',
+      placeholder: 'Select'
+    },
+    cascader: {
+      noMatch: 'No matching data',
+      loading: 'Loading',
+      placeholder: 'Select',
+      noData: 'No data'
+    },
+    pagination: {
+      goto: 'Go to',
+      pagesize: '/page',
+      total: 'Total {total}',
+      pageClassifier: ''
+    },
+    messagebox: {
+      title: 'Message',
+      confirm: 'OK',
+      cancel: 'Cancel',
+      error: 'Illegal input'
+    },
+    upload: {
+      deleteTip: 'press delete to remove',
+      delete: 'Delete',
+      preview: 'Preview',
+      continue: 'Continue'
+    },
+    table: {
+      emptyText: 'No Data',
+      confirmFilter: 'Confirm',
+      resetFilter: 'Reset',
+      clearFilter: 'All',
+      sumText: 'Sum'
+    },
+    tree: {
+      emptyText: 'No Data'
+    },
+    transfer: {
+      noMatch: 'No matching data',
+      noData: 'No data',
+      titles: ['List 1', 'List 2'], // to be translated
+      filterPlaceholder: 'Enter keyword', // to be translated
+      noCheckedFormat: '{total} items', // to be translated
+      hasCheckedFormat: '{checked}/{total} checked' // to be translated
+    },
+    image: {
+      error: 'FAILED'
+    },
+    pageHeader: {
+      title: 'Back' // to be translated
+    },
+    popconfirm: {
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No'
+    },
+    empty: {
+      description: 'No Data'
+    }
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/element-ui/lib/locale/lang/zh-CN.js":
 /*!**********************************************************!*\
   !*** ./node_modules/element-ui/lib/locale/lang/zh-CN.js ***!
@@ -101376,6 +101648,45 @@ component.options.__file = "resources/js/components/LoginComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/ShowMenuComponent.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/ShowMenuComponent.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShowMenuComponent.vue?vue&type=template&id=3f6d61f4& */ "./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4&");
+/* harmony import */ var _ShowMenuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShowMenuComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ShowMenuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ShowMenuComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -101421,6 +101732,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./LoginComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/LoginComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMenuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ShowMenuComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMenuComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -101488,6 +101815,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   staticRenderFns: () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowMenuComponent_vue_vue_type_template_id_3f6d61f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ShowMenuComponent.vue?vue&type=template&id=3f6d61f4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4&");
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -101504,16 +101848,9 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Hola")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -101580,6 +101917,23 @@ var render = function () {
                   _c("el-input", {
                     ref: "email",
                     attrs: { prop: "email" },
+                    nativeOn: {
+                      keyup: function ($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.focusInput("password")
+                      },
+                    },
                     model: {
                       value: _vm.form.email,
                       callback: function ($$v) {
@@ -101599,6 +101953,23 @@ var render = function () {
                   _c("el-input", {
                     ref: "password",
                     attrs: { "show-password": "", prop: "password" },
+                    nativeOn: {
+                      keyup: function ($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.loginAction("form")
+                      },
+                    },
                     model: {
                       value: _vm.form.password,
                       callback: function ($$v) {
@@ -101665,6 +102036,269 @@ var render = function () {
       ),
     ]),
   ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ShowMenuComponent.vue?vue&type=template&id=3f6d61f4& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render),
+/* harmony export */   staticRenderFns: () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "el-row",
+        { attrs: { gutter: 24 } },
+        [
+          _c(
+            "el-form",
+            { ref: "form", attrs: { model: _vm.form, rules: _vm.rulesForm } },
+            [
+              _c(
+                "el-col",
+                { attrs: { span: 24 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "Dia de la semana" } },
+                    [
+                      _c("el-date-picker", {
+                        attrs: {
+                          type: "date",
+                          placeholder: "Elegir el dia",
+                          "picker-options": _vm.pickerOptions,
+                        },
+                        model: {
+                          value: _vm.form.dia,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "dia", $$v)
+                          },
+                          expression: "form.dia",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "1er Menú" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el primer menú",
+                        },
+                        model: {
+                          value: _vm.form.menu1,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "menu1", $$v)
+                          },
+                          expression: "form.menu1",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "2do Menú" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el segundo menú",
+                        },
+                        model: {
+                          value: _vm.form.menu2,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "menu2", $$v)
+                          },
+                          expression: "form.menu2",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "3er Menú" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el tercer menú",
+                        },
+                        model: {
+                          value: _vm.form.menu3,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "menu3", $$v)
+                          },
+                          expression: "form.menu3",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "1er Postre" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el primer postre",
+                        },
+                        model: {
+                          value: _vm.form.postre1,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "postre1", $$v)
+                          },
+                          expression: "form.postre1",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "2er Postre" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el segundo postre",
+                        },
+                        model: {
+                          value: _vm.form.postre2,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "postre2", $$v)
+                          },
+                          expression: "form.postre2",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    { attrs: { label: "3er Postre" } },
+                    [
+                      _c("el-input", {
+                        attrs: {
+                          type: "textarea",
+                          rows: 2,
+                          placeholder: "Ingrese el tercer postre",
+                        },
+                        model: {
+                          value: _vm.form.postre3,
+                          callback: function ($$v) {
+                            _vm.$set(_vm.form, "postre3", $$v)
+                          },
+                          expression: "form.postre3",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "el-col",
+                { attrs: { span: 8 } },
+                [
+                  _c(
+                    "el-form-item",
+                    [
+                      _c("el-button", { attrs: { type: "success" } }, [
+                        _vm._v("Crear Menú"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

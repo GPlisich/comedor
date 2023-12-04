@@ -9,16 +9,9 @@
 
     <title>@yield('title')</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-    <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
-
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -59,7 +52,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/home" class="brand-link">
       <span class="brand-text font-weight-light">Somil S.A. - 
         @if(session()->exists('nameUser') && session('nameUser')!='Invitado')
           {{session('nameUser')}}
@@ -137,5 +130,56 @@
 </div>
 <!-- ./wrapper -->
 
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/sparklines/sparkline.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
+  <script src="{{asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+  <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
+  {{-- <script type="text/javascript">
+    /*** add active class and stay opened when selected ***/
+    var url = window.location;
+
+    // for sidebar menu entirely but not cover treeview
+    $('ul.nav-sidebar a').filter(function() {
+        if (this.href) {
+            return this.href == url || url.href.indexOf(this.href) == 0;
+        }
+    }).addClass('active');
+
+    // for the treeview
+    $('ul.nav-treeview a').filter(function() {
+        if (this.href) {
+            return this.href == url || url.href.indexOf(this.href) == 0;
+        }
+    }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+  </script> --}}
+  <script>
+    /** add active class and stay opened when selected */
+    var url = window.location;
+    const allLinks = document.querySelectorAll('.nav-item a');
+    const currentLink = [...allLinks].filter(e => {
+      return e.href == url;
+    });
+  
+    if (currentLink.length > 0) { //this filter because some links are not from menu
+        currentLink[0].classList.add("active");
+        // currentLink[0].closest(".nav-treeview").style.display = "block";
+        // currentLink[0].closest(".has-treeview").classList.add("active");
+    }
+  </script>
 </body>
 </html>

@@ -28,11 +28,16 @@ Route::get('/login/nuevoToken', function () {
 });
 
 
-Route::get('/home', 'HomeController@index')->middleware('checkUserRole');;
+Route::get('/home', 'HomeController@index')->middleware('checkUserRole');
 Route::get('/invitado', 'InvitadoController@index');
 Route::get('/login', 'Auth\LoginController@show')->name('login');
 Route::get('/register', 'Auth\RegisterController@show');
 Route::post('/login/logout', 'Auth\LoginController@logout');
-
 Route::post('/login/loguearse', 'Auth\LoginController@loguearse');
 // Route::resource('/login', 'Auth\LoginController');
+
+
+Route::get('/menu/showTickets', 'MenuController@showTickets');
+Route::get('/menu/showUserMenu', 'MenuController@showUserMenu');
+Route::get('/menu/showMenu', 'MenuController@showMenu');
+Route::resource('/menu', 'MenuController');

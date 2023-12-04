@@ -8,10 +8,10 @@
                         
                         
                         <el-form-item  label="Email" prop="email">
-                            <el-input v-model="form.email" prop="email" ref="email"></el-input>
+                            <el-input v-model="form.email" prop="email" ref="email" @keyup.native.enter="focusInput('password')"></el-input>
                         </el-form-item>
                         <el-form-item label="Password" prop="password">
-                            <el-input show-password v-model="form.password" prop="password" ref="password"></el-input>
+                            <el-input show-password v-model="form.password" prop="password"  @keyup.native.enter="loginAction('form')" ref="password"></el-input>
                         </el-form-item>
                         <div v-show="showError" class="error-login">
                             {{ this.validationErrors }}
@@ -58,15 +58,6 @@ export default {
         };
     },
     created(){
-        var self = this;
-        document.onkeyup=function(e){
-            var key=window.event.keyCode;
-            if(key==13 && self.form.email!='' && self.form.password!=''){
-                self.loginAction('form')
-            }else if(key==13 ){
-                self.focusInput('password');
-            }
-        }
     },
     mounted(){
         this.focusInput('email');
